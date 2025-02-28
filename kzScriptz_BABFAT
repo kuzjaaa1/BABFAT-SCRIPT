@@ -185,14 +185,16 @@ local Window = Rayfield:CreateWindow({
             end
         end,
      })
-	local Button2 = PlayerTab:CreateButton({
+     local Button2 = PlayerTab:CreateButton({
         Name = "AntiAfk",
         Callback = function()
-		while wait(120) do
-			game:GetService("Players").LocalPlayer.Idled:connect(function()
-			game:GetService("VirtualUser"):ClickButton2(Vector2.new())
-		end)
-	end,
+            while wait(120) do
+                game:GetService("Players").LocalPlayer.Idled:connect(function()
+                game:GetService("VirtualUser"):ClickButton2(Vector2.new())
+            end)
+        end,
+     })
+
 
     Rayfield:Notify({
    	Title = "Our Discord",
