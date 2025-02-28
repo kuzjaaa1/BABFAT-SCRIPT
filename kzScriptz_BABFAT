@@ -118,83 +118,96 @@ local Window = Rayfield:CreateWindow({
             rootPart.Anchored = false
         end,
      })
-     local Button1 = PlayerTab:CreateButton({
-        Name = "AutoFarm",
-        Callback = function()
-            while true do
-                local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
-                rootPart.CFrame = CFrame.new(-53.566001892089844, 100.600000381469727, 3293.89208984375)
-                wait(0.2)
-                rootPart.Anchored = true
-                wait(0.3)
-                rootPart.Anchored = false
-                rootPart.CFrame = CFrame.new(-53.566001892089844, 100.600000381469727, 6373.89208984375)
-                wait(0.2)
-                rootPart.Anchored = true
-                wait(0.3)
-                rootPart.Anchored = false
-                rootPart.CFrame = CFrame.new(-53.56591796875, 100.600006103515625, 2523.89208984375)
-                wait(0.2)
-                rootPart.Anchored = true
-                wait(0.3)
-                rootPart.Anchored = false
-                rootPart.CFrame = CFrame.new(-53.566001892089844, 100.600000381469727, 4063.89208984375)
-                wait(0.2)
-                rootPart.Anchored = true
-                wait(0.3)
-                rootPart.Anchored = false
-                rootPart.CFrame = CFrame.new(-53.566001892089844, 100.600000381469727, 1753.8919677734375)
-                wait(0.2)
-                rootPart.Anchored = true
-                wait(0.3)
-                rootPart.Anchored = false
-                rootPart.CFrame = CFrame.new(-53.566001892089844, 100.600000381469727, 4063.89208984375)
-                wait(0.2)
-                rootPart.Anchored = true
-                wait(0.3)
-                rootPart.Anchored = false
-                rootPart.CFrame = CFrame.new(-53.566001892089844, 100.600000381469727, 5603.89208984375)
-                wait(0.2)
-                rootPart.Anchored = true
-                wait(0.3)
-                rootPart.Anchored = false
-                rootPart.CFrame = CFrame.new(-53.566001892089844, 100.600000381469727, 7913.89208984375)
-                wait(0.2)
-                rootPart.Anchored = true
-                wait(0.3)
-                rootPart.Anchored = false
-                rootPart.CFrame = CFrame.new(-53.566001892089844, 100.600000381469727, 7143.89208984375)
-                wait(0.2)
-                rootPart.Anchored = true
-                wait(0.3)
-                rootPart.Anchored = false
-                rootPart.CFrame = CFrame.new(-53.566001892089844, 100.600000381469727, 4833.89208984375)
-                wait(0.2)
-                rootPart.Anchored = true
-                wait(0.3)
-                rootPart.Anchored = false
-                rootPart.CFrame = CFrame.new(-37.71611022949219, 100.59999084472656, 1114.193359375)
-                wait(0.2)
-                rootPart.Anchored = true
-                rootPart.CFrame = CFrame.new(-60.706504821777344, -345.74481201171875, 9496.849609375)
-                rootPart.Anchored = false
-                wait(16)
-                game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health = 0
-                wait(10)
-                
+      local enabledfarm = false
+      local function autoFarm()
+         local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+         rootPart.CFrame = CFrame.new(-53.566001892089844, 100.600000381469727, 3293.89208984375)
+         wait(0.2)
+         rootPart.Anchored = true
+         wait(0.3)
+         rootPart.Anchored = false
+         rootPart.CFrame = CFrame.new(-53.566001892089844, 100.600000381469727, 6373.89208984375)
+         wait(0.2)
+         rootPart.Anchored = true
+         wait(0.3)
+         rootPart.Anchored = false
+         rootPart.CFrame = CFrame.new(-53.56591796875, 100.600006103515625, 2523.89208984375)
+         wait(0.2)
+         rootPart.Anchored = true
+         wait(0.3)
+         rootPart.Anchored = false
+         rootPart.CFrame = CFrame.new(-53.566001892089844, 100.600000381469727, 4063.89208984375)
+         wait(0.2)
+         rootPart.Anchored = true
+         wait(0.3)
+         rootPart.Anchored = false
+         rootPart.CFrame = CFrame.new(-53.566001892089844, 100.600000381469727, 1753.8919677734375)
+         wait(0.2)
+         rootPart.Anchored = true
+         wait(0.3)
+         rootPart.Anchored = false
+         rootPart.CFrame = CFrame.new(-53.566001892089844, 100.600000381469727, 4063.89208984375)
+         wait(0.2)
+         rootPart.Anchored = true
+         wait(0.3)
+         rootPart.Anchored = false
+         rootPart.CFrame = CFrame.new(-53.566001892089844, 100.600000381469727, 5603.89208984375)
+         wait(0.2)
+         rootPart.Anchored = true
+         wait(0.3)
+         rootPart.Anchored = false
+         rootPart.CFrame = CFrame.new(-53.566001892089844, 100.600000381469727, 7913.89208984375)
+         wait(0.2)
+         rootPart.Anchored = true
+         wait(0.3)
+         rootPart.Anchored = false
+         rootPart.CFrame = CFrame.new(-53.566001892089844, 100.600000381469727, 7143.89208984375)
+         wait(0.2)
+         rootPart.Anchored = true
+         wait(0.3)
+         rootPart.Anchored = false
+         rootPart.CFrame = CFrame.new(-53.566001892089844, 100.600000381469727, 4833.89208984375)
+         wait(0.2)
+         rootPart.Anchored = true
+         wait(0.3)
+         rootPart.Anchored = false
+         rootPart.CFrame = CFrame.new(-37.71611022949219, 100.59999084472656, 1114.193359375)
+         wait(0.2)
+         rootPart.Anchored = true
+         rootPart.CFrame = CFrame.new(-60.706504821777344, -345.74481201171875, 9496.849609375)
+         rootPart.Anchored = false
+         wait(16)
+         game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health = 0
+         wait(10)
+	   end
+      local Button11 = PlayerTab:CreateButton({
+         Name = "Disable AutoFarm",
+         Callback = function()
+            enabledfarm = false
+            
+         end,
+      })
+   local Button1 = PlayerTab:CreateButton({
+      Name = "Enable AutoFarm",
+      Callback = function()
+         enabledfarm = true
+         while enabledfarm == true do
+            autoFarm()
+            if enabledfarm == false then
+               break
             end
-        end,
-     })
+         end
+      end,
+   })
      local Button2 = PlayerTab:CreateButton({
         Name = "AntiAfk",
         Callback = function()
-            while wait(120) do
-                game:GetService("Players").LocalPlayer.Idled:connect(function()
-                game:GetService("VirtualUser"):ClickButton2(Vector2.new())
-            end)
+            while true do
+               wait(120)
+               game:GetService("VirtualUser"):ClickButton2(Vector2.new())
+            end
         end,
      })
-
 
     Rayfield:Notify({
    	Title = "Our Discord",
